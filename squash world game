@@ -1,0 +1,40 @@
+'''python
+import pygame 
+import random
+# initialize pygame
+pygame.init()
+#constants
+SCREEN_WIDTH= 800
+SCREEN_HIEGHT = 600
+BLOCK_SIZE = 50
+ROWS = 8
+COLS = 8
+EMPTY_BLOCK = -1
+COLORS = [(255, 0, 0),(0, 255, 0) (0,0,255)]
+# Set up the screen
+screen =
+pygame.dispaly.set_caption("My candy crush clone")
+# Function to create the game grid def creat_grid():
+return[[random.randint(0,len(COLORS)-1) FOR _ in range(COLS)] for _ in range(ROWS)
+# Function to draw th grid def draw_grid(grid):
+for row in range(ROWS):
+for col in range(COLS):
+color =COLORS[grid[row][col]
+pygame.dra.rect(screen, color,(col * BLOCK_SIZE,BLOCK_SIZE, BLOCK_SIZE))
+# function to swap two blocks in the grid def swap_blocks(grid,row1,col1,row2,col2):
+grid[row1][col1], grid[row2][col2] =
+grid[row2][col2], grid[row1][col]
+# main game loop
+def main():
+grid = creat_grid()
+running = True
+while running:
+       for event in pygame.event.get():
+       if event.type==pygame.Quit:
+               running = False
+# update game state
+draw_grid(grid)
+pygame.display.update()
+pygame.quite()
+If_name_== " _main_ ";
+'''
